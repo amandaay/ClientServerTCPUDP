@@ -15,3 +15,13 @@ One for server and one for client.
 1. Compile with `javac TCPClient.java` / `javac UDPClient.java`
 2. `java TCPClient <IP> <Port Number>` / `java UDPClient <message> <Hostname> <Port number>`
 
+#### Sample TCP Output
+![TCP Output Sample (Part 1)](https://ibb.co/30b5xd9)
+
+![TCP Output Sample (Part 2)](https://ibb.co/xmhLtdD)
+
+#### Sample UDP Output
+
+![UDP Output Sample (Part 1)](https://ibb.co/BcppqcB)
+
+![UDP Output Sample (Part 2)](https://ibb.co/80rkXZX)
