@@ -37,6 +37,7 @@ public class TCPClient {
                 String userInput = System.console().readLine();
                 // Send it to Server
                 out.writeUTF(userInput);
+                System.out.println(timestamp + ", Sending: " + userInput);
                 // Receive response from Server
                 String response = in.readUTF();
                 int indexCleanResponse = response.indexOf("*");
