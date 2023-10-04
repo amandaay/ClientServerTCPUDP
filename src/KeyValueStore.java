@@ -1,11 +1,18 @@
 import java.util.HashMap;
 
 /**
- * Helper function to store the KeyValue pair
+ * Helper function to store the Key-value pair
  */
 public class KeyValueStore {
     private final HashMap<String, String> operation = new HashMap<>();
 
+    /**
+     * Handles put operator
+     * @param key Key value for storage
+     * @param value value intended to store
+     * @param putCount to keep track of 5 count or not
+     * @return the response statement that we want to return to the client
+     */
     public synchronized String put(String key, String value, int putCount) {
         if (operation.containsKey(key)) {
             return "Key already exist, try another key.";
@@ -16,6 +23,12 @@ public class KeyValueStore {
         }
     }
 
+    /**
+     * Handles get operator
+     * @param key Key value intended for retrieval
+     * @param getCount to keep track of 5 count or not
+     * @return the response statement that we want to return to the client
+     */
     public synchronized String get(String key, int getCount) {
         if (!operation.containsKey(key)) {
             return "Key does not exist.";
@@ -26,6 +39,12 @@ public class KeyValueStore {
         }
     }
 
+    /**
+     * Handles del operator
+     * @param key Key value intended for removal
+     * @param delCount to keep track of 5 count or not
+     * @return the response statement that we want to return to the client
+     */
     public synchronized String delete(String key, int delCount) {
         if (!operation.containsKey(key)) {
             return "Key does not exist.\noperations left: " + operation;

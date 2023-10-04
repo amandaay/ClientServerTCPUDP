@@ -4,16 +4,24 @@ import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * TCPServer
+ * In order to:
+ * compile: javac TCPServer.java
+ * to run: java TCPServer <Port>
+ */
 public class TCPServer {
     public static void main(String[] args) {
+
         System.out.println("Starting the TCPServer:");
-        // accept port number
+
         if (args.length < 1) {
             System.out.println("Usage: java TCPServer <Port Number>");
             System.exit(1);
         }
-        int ServerPort = Integer.parseInt(args[0]);
         try {
+            // Access port number
+            int ServerPort = Integer.parseInt(args[0]);
             // Register service on port
             ServerSocket listenSocket = new ServerSocket(ServerPort);
             while (true) {

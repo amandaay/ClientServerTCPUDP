@@ -3,6 +3,7 @@ import java.net.*;
 import java.io.*;
 
 /**
+ * TCPClient
  * Must run TCPServer first in order to run this
  * compile: javac TCPClient.java
  * run: java TCPClient <IP> <Port>

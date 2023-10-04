@@ -5,20 +5,26 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
+ * UDPServer
  * In order to:
  * compile: javac UDPServer.java
  * to run: java UDPServer <Port number>
  */
 public class UDPServer {
     public static void main(String args[]) {
+
         System.out.println("Starting the UDPServer:");
+
         DatagramSocket aSocket = null;
+
         if (args.length < 1) {
             System.out.println("Usage: java UDPServer <Port Number>");
             System.exit(1);
         }
         try {
+            // access port number
             int ServerPort = Integer.parseInt(args[0]);
+            // register service on port
             aSocket = new DatagramSocket(ServerPort);
 
             byte[] buffer = new byte[1000];
@@ -115,6 +121,13 @@ public class UDPServer {
         }
     }
 
+    /**
+     * Acknowledgement to client
+     * @param Msg a message that sends to the client
+     * @param request request datagram
+     * @param socket current socket
+     *
+     */
     private static void AckToClient(String Msg, DatagramPacket request, DatagramSocket socket) {
         try {
             byte[] msg = Msg.getBytes();

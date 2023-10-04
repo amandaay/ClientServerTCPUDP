@@ -4,15 +4,14 @@ import java.io.*;
 import java.util.Stack;
 
 /**
+ * UDPClient
  * In order to:
  * compile: javac UDPClient.java
  * make sure UDPServer is running in the same port
  * to run: java UDPClient <message> <Hostname> <Port number>
  */
 public class UDPClient {
-
     private static final int TIMEOUT_MS = 10000; // 10 seconds
-
 
     public static void main(String args[]) {
         System.out.println("Starting UDPClient:");
@@ -62,7 +61,7 @@ public class UDPClient {
             }
         }
     }
-    
+
     private static void SendToServer(String userInput, InetAddress aHost, int serverPort, DatagramSocket aSocket, Stack<String> sendBuilder) {
         try {
             aSocket.setSoTimeout(TIMEOUT_MS);
