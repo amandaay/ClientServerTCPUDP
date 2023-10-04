@@ -59,6 +59,9 @@ public void run() {
             // Get current timestamp in milliseconds
             String timestamp = Utils.getCurrentTimestamp();
 
+            // Log received request
+            Utils.logRequest(clientSocket.getInetAddress(), clientSocket.getPort(), userInput);
+
             // print timestamped message to standard output
             System.out.println(timestamp + ", Received: " + userInput);
             if (inputList.get(0).equals("SHUTDOWN")) {

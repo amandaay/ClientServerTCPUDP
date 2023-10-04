@@ -39,7 +39,7 @@ public class UDPServer {
                 String timestamp = Utils.getCurrentTimestamp();
 
                 // Log received request
-                logRequest(request, userInput);
+                Utils.logRequest(request.getAddress(), request.getPort(), userInput);
 
                 // print timestamped message to standard output
                 System.out.println(timestamp + ", Received: " + userInput);
@@ -123,13 +123,5 @@ public class UDPServer {
         } catch (IOException e) {
             System.out.println("IO: " + e.getMessage());
         }
-    }
-
-    // Log received request with source InetAddress and port
-    private static void logRequest(DatagramPacket request, String requestMessage) {
-        InetAddress clientAddress = request.getAddress();
-        int clientPort = request.getPort();
-        String logMessage = "Received request from " + clientAddress + ": " + clientPort + " - " + requestMessage;
-        System.out.println(logMessage);
     }
 }

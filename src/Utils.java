@@ -1,3 +1,4 @@
+import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,5 +20,11 @@ public class Utils {
             count = Integer.parseInt(response.substring(0, countIndex));
         }
         return count;
+    }
+
+    // Handle Log Request
+    public static void logRequest(InetAddress clientAddress, int clientPort, String requestMessage) {
+        String logMessage = "Received request from " + clientAddress + ": " + clientPort + " - " + requestMessage;
+        System.out.println(logMessage);
     }
 }
