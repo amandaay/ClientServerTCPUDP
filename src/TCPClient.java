@@ -14,7 +14,7 @@ public class TCPClient {
         System.out.println("Starting the TCPClient:");
         // client must take in ( hostname or IP address of the server ) and Port no. of the server
         if (args.length < 2) {
-            System.out.println("TCP client <client> <Port Number>");
+            System.out.println("Usage: java TCPClient <client> <Port Number>");
             System.exit(1);
         }
         String ClientHostname = args[0];
