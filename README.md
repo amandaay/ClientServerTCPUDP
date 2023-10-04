@@ -16,12 +16,12 @@ One for server and one for client.
 2. `java TCPClient <IP> <Port Number>` / `java UDPClient <message> <Hostname> <Port number>`
 
 #### Sample TCP Output
-![TCP Output Sample (Part 1)](https://ibb.co/30b5xd9)
+![TCP Output Sample (Part 1)](https://github.com/amandaay/ClientServerTCPUDP/blob/main/tcpPart1.png)
 
-![TCP Output Sample (Part 2)](https://ibb.co/xmhLtdD)
+![TCP Output Sample (Part 2)](https://github.com/amandaay/ClientServerTCPUDP/blob/main/tcpPart2.png)
 
 #### Sample UDP Output
 
-![UDP Output Sample (Part 1)](https://ibb.co/BcppqcB)
+![UDP Output Sample (Part 1)](https://github.com/amandaay/ClientServerTCPUDP/blob/main/udpPart1.png)
 
-![UDP Output Sample (Part 2)](https://ibb.co/80rkXZX)
+![UDP Output Sample (Part 2)](https://github.com/amandaay/ClientServerTCPUDP/blob/main/udpPart2.png)
