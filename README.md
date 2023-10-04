@@ -1,6 +1,6 @@
 # Single Server, Key-Value Store (TCP and UDP)
 
-## Split 2 different terminals:
+## Start with a split of 2 different terminals:
 One for server and one for client.
 
 ### In both terminals TCP/UDP
@@ -14,3 +14,4 @@ One for server and one for client.
 #### Client Terminal
 1. Compile with `javac TCPClient.java` / `javac UDPClient.java`
 2. `java TCPClient <IP> <Port Number>` / `java UDPClient <message> <Hostname> <Port number>`
+

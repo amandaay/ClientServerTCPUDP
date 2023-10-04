@@ -8,3 +8,12 @@
 /dataSources.local.xml
 # Zeppelin ignored files
 /ZeppelinRemoteNotebooks/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# Compiled class files
+target/
+bin/
+out/
