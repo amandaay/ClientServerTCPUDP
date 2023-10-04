@@ -49,27 +49,27 @@ public class UDPServer {
 
                 // print timestamped message to standard output
                 System.out.println(timestamp + ", Received: " + userInput);
-                if (inputList.get(0).equals("SHUTDOWN")) {
+                if (inputList.get(0).equalsIgnoreCase("SHUTDOWN")) {
                     prevInput = "SHUTDOWN";
                 }
 
                 // Terminates client upon response
-                if (prevInput.equals("SHUTDOWN") && (inputList.get(0).equalsIgnoreCase("y") || (putCount >= 5 && getCount >=5 && delCount>=5))) {
+                if (prevInput.equalsIgnoreCase("SHUTDOWN") && (inputList.get(0).equalsIgnoreCase("y") || (putCount >= 5 && getCount >=5 && delCount>=5))) {
                     AckToClient("Shutting down as requested.\nYou must kill the server to shut down completely.", request, aSocket);
-                } else if (prevInput.equals("SHUTDOWN") && inputList.get(0).equalsIgnoreCase("n")) {
+                } else if (prevInput.equalsIgnoreCase("SHUTDOWN") && inputList.get(0).equalsIgnoreCase("n")) {
                   prevInput = "";
                   AckToClient("Let's continue", request, aSocket);
                   continue;
                 }
 
                 // Take care all the unknown operations
-                if (!inputList.get(0).equals("PUT") && !inputList.get(0).equals("GET") && !inputList.get(0).equals("DELETE") && !inputList.get(0).equals("SHUTDOWN")){
+                if (!inputList.get(0).equalsIgnoreCase("PUT") && !inputList.get(0).equalsIgnoreCase("GET") && !inputList.get(0).equalsIgnoreCase("DELETE") && !inputList.get(0).equalsIgnoreCase("SHUTDOWN")){
                     AckToClient("Received unknown operation.\nTry again!", request, aSocket);
                     continue;
                 }
 
                 // Handle the PUT operator
-                if (inputList.get(0).equals("PUT")) {
+                if (inputList.get(0).equalsIgnoreCase("PUT")) {
                     if (inputList.size() < 3) {
                         AckToClient("PUT must have key value pair, try again", request, aSocket);
                         continue;
@@ -81,7 +81,7 @@ public class UDPServer {
                     AckToClient(putResponse, request, aSocket);
                 }
                 // Handle Get Operator
-                if (inputList.get(0).equals("GET")) {
+                if (inputList.get(0).equalsIgnoreCase("GET")) {
                     if (inputList.size() != 2) {
                         AckToClient("GET must have a key, try again", request, aSocket);
                         continue;
@@ -92,7 +92,7 @@ public class UDPServer {
                     AckToClient(getResponse, request, aSocket);
                 }
                 // Handle Delete operator
-                if (inputList.get(0).equals("DELETE")) {
+                if (inputList.get(0).equalsIgnoreCase("DELETE")) {
                     if (inputList.size() != 2) {
                         AckToClient("DELETE must have a key, try again", request, aSocket);
                         continue;
@@ -104,7 +104,7 @@ public class UDPServer {
                 }
 
                 // Handle when clients want to terminate
-                if (inputList.get(0).equals("SHUTDOWN") && (putCount < 5 || getCount <5 || delCount<5)) {
+                if (inputList.get(0).equalsIgnoreCase("SHUTDOWN") && (putCount < 5 || getCount <5 || delCount<5)) {
                     AckToClient("You haven't completed at least 5 operator each. Are you sure you want to shutdown? (y/n)", request, aSocket);
                 }
 
